@@ -17,7 +17,7 @@ import "./modules/glob"
 import { atob, btoa, Buffer } from "./modules/stringHandling"
 
 /** @internal */
-import {crypto} from "./modules/crypto"
+import { crypto } from "./modules/crypto"
 
 /** @internal */
 import "./modules/random"
@@ -27,11 +27,15 @@ import { URL, URLSearchParams } from "./modules/url"
 import "./modules/url"
 
 /** @internal */
-import {utils} from "./modules/utils"
+import { utils } from "./modules/utils"
 import "./modules/utils"
 
 /** @internal */
-export { atob, btoa, Buffer, fetch, fsPromises, glob, crypto, URL, URLSearchParams, utils}
+import { router } from "./modules/router"
+import "./modules/router"
+
+/** @internal */
+export { atob, btoa, Buffer, fetch, fsPromises, glob, crypto, URL, URLSearchParams, utils, router }
 
 // Stuff to be exported to the sdk types file
-export { HttpRequest, HttpResponse, HandleRequest}
+export { HttpRequest, HttpResponse, HandleRequest }
