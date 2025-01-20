@@ -4,7 +4,11 @@
     "description": "{{project-description}}",
     "main": "index.js",
     "scripts": {
+        {%- if package-manager == "npm" -%}
         "build": "npx webpack --mode=production && npx mkdirp target && npx j2w -i dist.js -d combined-wit -n combined -o target/{{project-name | kebab_case}}.wasm {% if enable-aot == 'y' or enable-aot == 'Y' %}--aot{% endif %}",
+        {%- else -%}
+        "build": "yarn exec webpack -- --mode=production && yarn exec mkdirp -- target && yarn exec j2w -- -i dist.js -d combined-wit -n combined -o target/{{project-name | kebab_case}}.wasm {% if enable-aot == 'y' or enable-aot == 'Y' %}--aot{% endif %}",
+        {%- endif -%}
         "test": "echo \"Error: no test specified\" && exit 1",
         "postinstall": "knitwit"
     },

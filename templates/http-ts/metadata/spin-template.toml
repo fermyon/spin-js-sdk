@@ -11,3 +11,4 @@ component = "component.txt"
 project-description = { type = "string", prompt = "Description", default = "" }
 http-path = { type = "string", prompt = "HTTP path", default = "/...", pattern = "^/\\S*$" }
 enable-aot = { type = "string", prompt = "Enable AoT Compilation [y/N]", default = "N", pattern = "^[yYnN]$" }
+package-manager = { type = "string", prompt = "Which package manager would you like to use (npm|yarn)", default = "npm", pattern = "^(npm|yarn)$" }
